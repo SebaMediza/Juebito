@@ -1,0 +1,35 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "Practica_2_1.Ejercicio_2_1_2.Main",
+            "projectName": "Juebito_3399cbb2"
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "Practica_2_1.Ejercicio_2_1_1.Main",
+            "projectName": "Juebito_3399cbb2"
+        },
+        {
+            "type": "java",
+            "name": "Main_v2",
+            "request": "launch",
+            "mainClass": "Practica_2_1.Ejercicio_2_1_1.Main_v2",
+            "projectName": "Juebito_3399cbb2"
+        }
+    ]
+}
