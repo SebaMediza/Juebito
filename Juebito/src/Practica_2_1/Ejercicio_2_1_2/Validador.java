@@ -1,5 +1,8 @@
 package Practica_2_1.Ejercicio_2_1_2;
 import java.util.regex.Pattern;
+
+import javax.swing.text.StyledEditorKit.BoldAction;
+
 import java.util.regex.Matcher;
 
 public class Validador {
@@ -15,8 +18,10 @@ public class Validador {
     }
    */
     public static boolean esAlfanumerico(String alfaumerico) {
-        Pattern p = Pattern.compile("^[a-zA-Z0-9]+$");
+        /*Pattern p = Pattern.compile("^[a-zA-Z0-9]+$");
         Matcher m = p.matcher(alfaumerico);
-        return m.matches();
+        return m.matches();*/
+        Pattern p = p{\Alnum};
+        Boolean b = Pattern.matches(alfaumerico,);
     }
 }
