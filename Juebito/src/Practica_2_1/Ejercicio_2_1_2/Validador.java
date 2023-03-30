@@ -16,9 +16,10 @@ public class Validador {
     }
 
     public boolean esFlotante(Float flotante){
-        this.flotante = flotante;
+        String asd = String.valueOf(this.flotante);
         String patron = "^\\\\d+\\.\\d*";
         Pattern p = Pattern.compile(patron);
-        Boolean b = p.matches(p, this.flotante);
+        Boolean b = p.matcher(asd).lookingAt();
+        return b;
     }
 }
