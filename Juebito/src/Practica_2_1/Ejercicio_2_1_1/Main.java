@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
+        GregorianCalendar calendario = new GregorianCalendar();
         int eleccion;
         Favoritos fav = new Favoritos();
         do {
@@ -16,42 +17,58 @@ public class Main {
                 case 1:{
                     input.nextLine();
                     ContenidoAudioVisual t = new ContenidoAudioVisual();
-                    String tit;
-                    String aut;
-                    int dur;
-                    String dir;
-                    String fecEst;
-                    String idi;
-                    String cc;
-                    String gen;
+                    String titutlo;
+                    String autor;
+                    int hora, minutos;
+                    String dirrector;
+                    int fecEstAnio, fecEstMes, fecEstdia;
+                    String idiomo;
+                    String subtitulos;
+                    String genero;
+
                     System.out.println("Titulo");
-                    tit = input.nextLine();
-                    t.setTitulo(tit);
+                    titutlo = input.nextLine();
+                    t.setTitulo(titutlo);
+
                     System.out.println("Autor");
-                    aut = input.nextLine();
-                    t.setAutor(aut);
+                    autor = input.nextLine();
+                    t.setAutor(autor);
+
                     System.out.println("Director");
-                    dir = input.nextLine();
-                    t.setDirector(dir);
+                    dirrector = input.nextLine();
+                    t.setDirector(dirrector);
+
                     System.out.println("Duracion");
-                    dur = input.nextInt();
+                    minutos = input.nextInt();
+                    hora = input.nextInt();
                     t.setDuracion();
+
                     System.out.println("Fecha de Estreno");
-                    fecEst = input.nextLine();
-                    t.setFechaEstreno(Date.valueOf(fecEst));
+                    fecEstAnio = input.nextInt();
+                    fecEstMes = input.nextInt();
+                    fecEstdia = input.nextInt();
+                    calendario.set(fecEstAnio, fecEstMes, fecEstdia);
+                    t.setFechaEstreno(calendario);
+                    input.nextLine();
+
                     System.out.println("Idioma");
-                    idi = input.nextLine();
-                    t.setIdiomaOriginal(idi);
+                    idiomo = input.nextLine();
+                    t.setIdiomaOriginal(idiomo);
+
                     System.out.println("Subtitulos");
-                    cc = input.nextLine();
-                    t.setSubtitulos(cc);
+                    subtitulos = input.nextLine();
+                    t.setSubtitulos(subtitulos);
+
                     System.out.println("Genero");
-                    gen = input.nextLine();
-                    t.setGenero(gen);
+                    genero = input.nextLine();
+                    t.setGenero(genero);
+
                     System.out.println("Actores");
                     t.setActores();
+
                     System.out.println("Interpretes");
                     t.setInterpretes();
+
                     fav.agregarFaborito(t);
                     break;
                 }

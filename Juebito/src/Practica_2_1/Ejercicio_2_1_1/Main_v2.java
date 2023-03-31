@@ -1,6 +1,4 @@
 package Practica_2_1.Ejercicio_2_1_1;
-import java.sql.Time;
-import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Scanner;
 
@@ -9,7 +7,7 @@ public class Main_v2{
         Scanner input = new Scanner(System.in);
         int eleccion;
         Catalogo cat = new Catalogo();
-        GregorianCalendar cla = new GregorianCalendar();
+        GregorianCalendar calendario = new GregorianCalendar();
         do{
             System.out.println("Bienvenido Usuario, a su lista de favoritos");
             System.out.println("Que desea hacer? 1) Agregar a Favoritos; 2) Remover de Favoritos; 3) Listar Favoritos; 4) Salir");
@@ -21,7 +19,7 @@ public class Main_v2{
                     ContenidoAudioVisual t = new ContenidoAudioVisual();
                     String titutlo;
                     String autor;
-                    int duracion;
+                    int hora, minutos;
                     String dirrector;
                     int fecEstAnio, fecEstMes, fecEstdia;
                     String idiomo;
@@ -41,14 +39,15 @@ public class Main_v2{
                     t.setDirector(dirrector);
 
                     System.out.println("Duracion");
-                    duracion = input.nextInt();
-                    //cla.s
-
+                    hora = input.nextInt();
+                    minutos = input.nextInt();
+                    
                     System.out.println("Fecha de Estreno");
                     fecEstAnio = input.nextInt();
                     fecEstMes = input.nextInt();
                     fecEstdia = input.nextInt();
-                    //t.setFechaEstreno(cla.set(fecEstAnio, fecEstMes, fecEstdia));
+                    calendario.set(fecEstAnio, fecEstMes, fecEstdia);
+                    t.setFechaEstreno(calendario);
                     input.nextLine();
 
                     System.out.println("Idioma");
@@ -64,10 +63,18 @@ public class Main_v2{
                     t.setGenero(genero);
 
                     System.out.println("Actores");
-//                    t.setActores();
+                    System.out.println("Ingrese los Actores, para finalizar ingrese fin");
+                    String actor = input.nextLine();
+                    do {
+                        t.setActores(actor);
+                    }while (actor.matches("fin"));
 
                     System.out.println("Interpretes");
-//                    t.setInterpretes();
+                    System.out.println("Ingrese los Actores, para finalizar ingrese fin");
+                    String interprete = input.nextLine();
+                    do {
+                        t.setInterpretes(interprete);
+                    }while (interprete.matches("fin"));
 
                     cat.addContenido(t);
                 }

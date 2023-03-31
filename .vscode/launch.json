@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Main_v2",
+            "request": "launch",
+            "mainClass": "Practica_2_1.Ejercicio_2_1_1.Main_v2",
+            "projectName": "Juebito_cc006398"
+        },
+        {
+            "type": "java",
             "name": "Main",
             "request": "launch",
             "mainClass": "Practica_2_1.Ejercicio_2_1_2.Main",
