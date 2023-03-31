@@ -19,29 +19,29 @@ public class Main_v2{
                 case 1 -> {
                     input.nextLine();
                     ContenidoAudioVisual t = new ContenidoAudioVisual();
-                    String tit;
-                    String aut;
-                    int dur;
-                    String dir;
+                    String titutlo;
+                    String autor;
+                    int duracion;
+                    String dirrector;
                     int fecEstAnio, fecEstMes, fecEstdia;
-                    String idi;
-                    String cc;
-                    String gen;
+                    String idiomo;
+                    String subtitulos;
+                    String genero;
 
                     System.out.println("Titulo");
-                    tit = input.nextLine();
-                    t.setTitulo(tit);
+                    titutlo = input.nextLine();
+                    t.setTitulo(titutlo);
 
                     System.out.println("Autor");
-                    aut = input.nextLine();
-                    t.setAutor(aut);
+                    autor = input.nextLine();
+                    t.setAutor(autor);
 
                     System.out.println("Director");
-                    dir = input.nextLine();
-                    t.setDirector(dir);
+                    dirrector = input.nextLine();
+                    t.setDirector(dirrector);
 
                     System.out.println("Duracion");
-                    dur = input.nextInt();
+                    duracion = input.nextInt();
                     //cla.s
 
                     System.out.println("Fecha de Estreno");
@@ -52,16 +52,16 @@ public class Main_v2{
                     input.nextLine();
 
                     System.out.println("Idioma");
-                    idi = input.nextLine();
-                    t.setIdiomaOriginal(idi);
+                    idiomo = input.nextLine();
+                    t.setIdiomaOriginal(idiomo);
 
                     System.out.println("Subtitulos");
-                    cc = input.nextLine();
-                    t.setSubtitulos(cc);
+                    subtitulos = input.nextLine();
+                    t.setSubtitulos(subtitulos);
 
                     System.out.println("Genero");
-                    gen = input.nextLine();
-                    t.setGenero(gen);
+                    genero = input.nextLine();
+                    t.setGenero(genero);
 
                     System.out.println("Actores");
 //                    t.setActores();
