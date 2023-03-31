@@ -1,10 +1,8 @@
 package Practica_2_1.Ejercicio_2_1_1;
 import java.util.GregorianCalendar;
 import java.util.List;
-import java.util.Scanner;
 
 public class ContenidoAudioVisual {
-    private Scanner input = new Scanner(System.in);
     private String titulo;
     private String autor;
     private GregorianCalendar duracion;
