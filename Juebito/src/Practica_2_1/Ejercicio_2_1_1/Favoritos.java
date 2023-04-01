@@ -27,7 +27,7 @@ public class Favoritos {
             System.out.println(contenidoAudioVisual.getGenero());
             System.out.println(contenidoAudioVisual.getSubtitulos());
             System.out.println(contenidoAudioVisual.getFechaEstreno());
-            System.out.println(contenidoAudioVisual.getDuracion());
+            System.out.println(ContenidoAudioVisual.getDuracion());
             System.out.println(contenidoAudioVisual.getIdiomaOriginal());
         }
     }

@@ -7,6 +7,7 @@ public class Main_v2{
         try (Scanner input = new Scanner(System.in)) {
             int eleccion;
             Catalogo cat = new Catalogo();
+            //Favoritos cat = new Favoritos();
             GregorianCalendar calendario = new GregorianCalendar();
             do{
                 System.out.println("Bienvenido Usuario, a su lista de favoritos");
@@ -92,12 +93,12 @@ public class Main_v2{
                         t.setInterpretes(interpretes);
 
                         cat.addContenido(t);
-                        cat.addContenido(p);
+                        //cat.addContenido(p);
+                        //cat.agregarFaborito(p);
                     }
                     case 2 -> {
                         int numero=1;
-                        cat.deleteContenido(numero);
-                    }
+                        cat.deleteContenido(numero);                    }
                     case 3 -> {
                         System.out.println("Sus favoritos son:");
                         cat.showContenido();

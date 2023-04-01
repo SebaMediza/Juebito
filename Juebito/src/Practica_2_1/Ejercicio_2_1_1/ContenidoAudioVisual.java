@@ -1,4 +1,5 @@
 package Practica_2_1.Ejercicio_2_1_1;
+import java.util.Calendar;
 //import java.util.Calendar;
 import java.util.GregorianCalendar;
 
@@ -14,7 +15,7 @@ public class ContenidoAudioVisual {
     private String idiomaOriginal;
     private String subtitulos;
 
-    GregorianCalendar calendar = new GregorianCalendar();
+    static GregorianCalendar calendar = new GregorianCalendar();
 
     public ContenidoAudioVisual(){};
 
@@ -27,7 +28,7 @@ public class ContenidoAudioVisual {
         this.subtitulos=subtitulos;
         this.actores=actores;
         this.interpretes=interpretes;
-        this.duracion.set(anio, mes, dia, hora, minutos);
+        calendar.set(hora, dia, mes, anio, minutos);
     }
 
     public void setTitulo(String titulo) {
@@ -43,8 +44,8 @@ public class ContenidoAudioVisual {
         this.autor = autor;
     }
 
-    public GregorianCalendar getDuracion() {
-        return duracion;
+    public static int getDuracion() {
+        return Calendar.HOUR + ':' + Calendar.MINUTE;
     }
     public void setDuracion(int horas, int minutos) {
         //this.duracion.add(this.duracion.HOUR, minutos);
