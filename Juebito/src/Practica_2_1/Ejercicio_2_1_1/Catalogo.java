@@ -26,10 +26,10 @@ public class Catalogo {
         cat.remove(index);
     }
 
-    public Hashtable<Integer, ContenidoAudioVisual> buscarContenido(GregorianCalendar fec_1, GregorianCalendar fec_2){
-        for(Integer i=1;i< cat.size();i++){
-            if(fec_1.after(cat.get(i).getFechaEstreno()) && fec_2.before(cat.get(i).getFechaEstreno()));
-        }
+    // public Hashtable<Integer, ContenidoAudioVisual> buscarContenido(GregorianCalendar fec_1, GregorianCalendar fec_2){
+    //     for(Integer i=1;i< cat.size();i++){
+    //         if(fec_1.after(cat.get(i).getFechaEstreno()) && fec_2.before(cat.get(i).getFechaEstreno()));
+    //     }
         
-    }
+    // }
 }

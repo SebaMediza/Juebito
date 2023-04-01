@@ -45,7 +45,7 @@ public class ContenidoAudioVisual {
     }
 
     public static int getDuracion() {
-        return Calendar.HOUR + ':' + Calendar.MINUTE;
+        return GregorianCalendar.HOUR + ':' + GregorianCalendar.MINUTE;
     }
     public void setDuracion(int horas, int minutos) {
         //this.duracion.add(this.duracion.HOUR, minutos);
