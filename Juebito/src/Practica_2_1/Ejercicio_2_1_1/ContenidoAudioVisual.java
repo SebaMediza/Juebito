@@ -1,14 +1,14 @@
 package Practica_2_1.Ejercicio_2_1_1;
+//import java.util.Calendar;
 import java.util.GregorianCalendar;
-import java.util.List;
 
 public class ContenidoAudioVisual {
     private String titulo;
     private String autor;
     private GregorianCalendar duracion;
     private String director;
-    private List<String> interpretes;
-    private List<String> actores;
+    private String interpretes;
+    private String actores;
     private GregorianCalendar fechaEstreno;
     private String genero;
     private String idiomaOriginal;
@@ -18,17 +18,16 @@ public class ContenidoAudioVisual {
 
     public ContenidoAudioVisual(){};
 
-    public ContenidoAudioVisual(String titulo, String autor, GregorianCalendar duracion, String director, GregorianCalendar fechaEstreno, String genero, String idiomaOriginal, String subtitulos){
+    public ContenidoAudioVisual(String titulo, String autor, String director, String genero, String idiomaOriginal, String subtitulos, String actores, String interpretes, int hora, int minutos, int dia, int mes, int anio){
         this.titulo=titulo;
         this.autor=autor;
         this.director=director;
         this.genero=genero;
         this.idiomaOriginal=idiomaOriginal;
         this.subtitulos=subtitulos;
-        this.actores=null;
-        this.actores=null;
-        this.fechaEstreno=null;
-        this.duracion=null;
+        this.actores=actores;
+        this.interpretes=interpretes;
+        this.duracion.set(anio, mes, dia, hora, minutos);
     }
 
     public void setTitulo(String titulo) {
@@ -47,8 +46,9 @@ public class ContenidoAudioVisual {
     public GregorianCalendar getDuracion() {
         return duracion;
     }
-    public void setDuracion(GregorianCalendar duracion) {
-        this.duracion = duracion;
+    public void setDuracion(int horas, int minutos) {
+        //this.duracion.add(this.duracion.HOUR, minutos);
+        //this.duracion.add(this.duracion.MINUTE, minutos);
     }
     public String getDirector() {
         return director;
@@ -56,17 +56,17 @@ public class ContenidoAudioVisual {
     public void setDirector(String director) {
         this.director = director;
     }
-    public List<String> getInterpretes() {
+    public String getInterpretes() {
         return this.interpretes;
     }
     public void setInterpretes(String interprete) {
-        this.interpretes.add(interprete);
+        this.interpretes = interprete;
     }
-    public List<String> getActores() {
+    public String getActores() {
         return this.actores;
     }
     public void setActores(String actor) {
-        this.actores.add(actor);
+        this.actores = actor; 
     }
     public GregorianCalendar getFechaEstreno() {
         return fechaEstreno;

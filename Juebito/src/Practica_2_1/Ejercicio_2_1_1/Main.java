@@ -41,7 +41,6 @@ public class Main {
                     System.out.println("Duracion");
                     minutos = input.nextInt();
                     hora = input.nextInt();
-                    t.setDuracion();
 
                     System.out.println("Fecha de Estreno");
                     fecEstAnio = input.nextInt();
@@ -64,10 +63,8 @@ public class Main {
                     t.setGenero(genero);
 
                     System.out.println("Actores");
-                    t.setActores();
 
                     System.out.println("Interpretes");
-                    t.setInterpretes();
 
                     fav.agregarFaborito(t);
                     break;

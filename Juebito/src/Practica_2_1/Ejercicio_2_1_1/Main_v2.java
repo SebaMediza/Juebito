@@ -25,7 +25,25 @@ public class Main_v2{
                         String idiomo;
                         String subtitulos;
                         String genero;
+                        String actores;
+                        String interpretes;
 
+                        ContenidoAudioVisual p = new ContenidoAudioVisual(
+                            "Avengers",
+                            "Marvle",
+                            "Destin Daniel Cretton",
+                            "Acción",
+                            "Ingles",
+                            "Español",
+                            "Robert Downey Jr, Chris Evans, Scarlett Johansson, Jeremy Renner, Marl Ruffalo, Chris Hemsworth",
+                            "Alguien, no se",
+                            2,
+                            26,
+                            12,
+                            10,
+                            2001
+                        );
+                        
                         System.out.println("Titulo");
                         titutlo = input.nextLine();
                         t.setTitulo(titutlo);
@@ -38,11 +56,12 @@ public class Main_v2{
                         dirrector = input.nextLine();
                         t.setDirector(dirrector);
 
-                        System.out.println("Duracion");
+                        System.out.println("Duracion, HH-MM");
                         hora = input.nextInt();
                         minutos = input.nextInt();
+                        t.setDuracion(hora, minutos);
                         
-                        System.out.println("Fecha de Estreno");
+                        System.out.println("Fecha de Estreno AAAA-MM-DD");
                         fecEstAnio = input.nextInt();
                         fecEstMes = input.nextInt();
                         fecEstdia = input.nextInt();
@@ -63,20 +82,17 @@ public class Main_v2{
                         t.setGenero(genero);
 
                         System.out.println("Actores");
-                        System.out.println("Ingrese los Actores, para finalizar ingrese fin");
-                        String actor = input.nextLine();
-                        do {
-                            t.setActores(actor);
-                        }while (actor.matches("fin"));
+                        System.out.println("Ingrese los Actores, separados por una ,");
+                        actores = input.nextLine();
+                        t.setActores(actores);
 
                         System.out.println("Interpretes");
-                        System.out.println("Ingrese los Actores, para finalizar ingrese fin");
-                        String interprete = input.nextLine();
-                        do {
-                            t.setInterpretes(interprete);
-                        }while (interprete.matches("fin"));
+                        System.out.println("Ingrese los Interpretes, separados por una ,");
+                        interpretes = input.nextLine();
+                        t.setInterpretes(interpretes);
 
                         cat.addContenido(t);
+                        cat.addContenido(p);
                     }
                     case 2 -> {
                         int numero=1;

@@ -29,13 +29,6 @@ public class Favoritos {
             System.out.println(contenidoAudioVisual.getFechaEstreno());
             System.out.println(contenidoAudioVisual.getDuracion());
             System.out.println(contenidoAudioVisual.getIdiomaOriginal());
-            for(int i=0;i<contenidoAudioVisual.getActores().size();i++){
-                System.out.println(contenidoAudioVisual.getActores().get(i));
-            }
-            for(int i=0;i<contenidoAudioVisual.getInterpretes().size();i++){
-                System.out.println(contenidoAudioVisual.getInterpretes().get(i));
-            }
-
         }
     }
 }
