@@ -7,14 +7,15 @@ public class Main {
         try (Scanner input = new Scanner(System.in)) {
             GregorianCalendar calendario = new GregorianCalendar();
             int eleccion;
-            Favoritos fav = new Favoritos();
+            //Favoritos fav = new Favoritos();
+            Catalogo cat = new Catalogo();
             do {
                 System.out.println("Bienvenido Usuario, a su lista de favoritos");
-                System.out.println("Que desea hacer? 1) Agregar a Favoritos; 2) Remover de Favoritos; 3) Listar Favoritos; 4) Salir");
+                System.out.println("Que desea hacer? 1) Agregar a Favoritos; 2) Remover de Favoritos; 3) Listar Favoritos; 5) Buscar un Titulo Especifico; 0) Salir");
                 eleccion = input.nextInt();
 
                 switch (eleccion) {
-                    case 1:{
+                    case 1 -> {
                         input.nextLine();
                         ContenidoAudioVisual t = new ContenidoAudioVisual();
                         String titutlo;
@@ -25,7 +26,25 @@ public class Main {
                         String idiomo;
                         String subtitulos;
                         String genero;
+                        String actores;
+                        String interpretes;
 
+                        ContenidoAudioVisual p = new ContenidoAudioVisual(
+                            "Avengers",
+                            "Marvle",
+                            "Destin Daniel Cretton",
+                            "Acción",
+                            "Ingles",
+                            "Español",
+                            "Robert Downey Jr, Chris Evans, Scarlett Johansson, Jeremy Renner, Marl Ruffalo, Chris Hemsworth",
+                            "Alguien, no se",
+                            2,
+                            26,
+                            12,
+                            10,
+                            2001
+                        );
+                        /*
                         System.out.println("Titulo");
                         titutlo = input.nextLine();
                         t.setTitulo(titutlo);
@@ -38,11 +57,12 @@ public class Main {
                         dirrector = input.nextLine();
                         t.setDirector(dirrector);
 
-                        System.out.println("Duracion");
-                        minutos = input.nextInt();
+                        System.out.println("Duracion, HH-MM");
                         hora = input.nextInt();
-
-                        System.out.println("Fecha de Estreno");
+                        minutos = input.nextInt();
+                        t.setDuracion(hora, minutos);
+                        
+                        System.out.println("Fecha de Estreno AAAA-MM-DD");
                         fecEstAnio = input.nextInt();
                         fecEstMes = input.nextInt();
                         fecEstdia = input.nextInt();
@@ -63,28 +83,37 @@ public class Main {
                         t.setGenero(genero);
 
                         System.out.println("Actores");
+                        System.out.println("Ingrese los Actores, separados por una ,");
+                        actores = input.nextLine();
+                        t.setActores(actores);
 
                         System.out.println("Interpretes");
-
-                        fav.agregarFaborito(t);
+                        System.out.println("Ingrese los Interpretes, separados por una ,");
+                        interpretes = input.nextLine();
+                        t.setInterpretes(interpretes);
+                        */
+                        //fav.addContenido(t);
+                        cat.addContenido(p);
+                        //cat.agregarFaborito(p);
                         break;
                     }
-                    case 2:{
-                        String tituto;
-                        System.out.println("Ingrese el nombre de la Serie o Pelicula a borrar");
-                        tituto = input.nextLine();
-                        fav.eliminarFavorito(tituto);
+                    case 2 -> {
+                        int id;
+                        System.out.println("Ingrese el ID de la Serie o Pelicula a borrar");
+                        id = input.nextInt();
+                        cat.deleteContenido(id);
                         break;
                     }
-                    case 3:{
-                        System.out.println("Sus favoritos son:");
-                        fav.listarFavorito();
+                    case 3 -> {
+                        cat.showContenido();
                         break;
                     }
-                    default: System.out.println("Opcion incorrecta");
-                    break;
+                    case 4 ->{
+                        cat.printContenido();
+                    }
+                    default -> System.out.println("Opcion incorrecta");
                 }
-            }while (eleccion != 4);
+            }while (eleccion != 0);
         }
         System.out.println("Adios!!");
     }

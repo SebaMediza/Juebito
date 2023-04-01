@@ -1,6 +1,5 @@
 package Practica_2_1.Ejercicio_2_1_1;
 import java.util.Calendar;
-//import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 public class ContenidoAudioVisual {
@@ -92,5 +91,21 @@ public class ContenidoAudioVisual {
     }
     public void setSubtitulos(String subtitulos) {
         this.subtitulos = subtitulos;
+    }
+
+    @Override
+    public String toString() {
+        return 
+            " Titulo='" + getTitulo() + "'" +
+            ", Autor='" + getAutor() + "'" +
+            ", Duracion='" + getDuracion() + "'" +
+            ", Director='" + getDirector() + "'" +
+            ", Interpretes='" + getInterpretes() + "'" +
+            ", Actores='" + getActores() + "'" +
+            ", Fecha de Estreno='" + getFechaEstreno() + "'" +
+            ", Genero='" + getGenero() + "'" +
+            ", Idioma Original='" + getIdiomaOriginal() + "'" +
+            ", Subtitulos='" + getSubtitulos() + "'"
+            ;
     }
 }
