@@ -7,11 +7,12 @@ public class Main {
         try (Scanner input = new Scanner(System.in)) {
             GregorianCalendar calendario = new GregorianCalendar();
             int eleccion;
-            //Favoritos fav = new Favoritos();
-            Catalogo cat = new Catalogo();
+            //Favoritos cat = new Favoritos();
+            //Catalogo cat = new Catalogo();
+            Favoritos_arreglo cat = new Favoritos_arreglo();
             do {
                 System.out.println("Bienvenido Usuario, a su lista de favoritos");
-                System.out.println("Que desea hacer? 1) Agregar a Favoritos; 2) Remover de Favoritos; 3) Listar Favoritos; 5) Buscar un Titulo Especifico; 0) Salir");
+                System.out.println("Que desea hacer? 1) Agregar a Favoritos; 2) Remover de Favoritos; 3) Listar Favoritos; 4) Buscar un Titulo Especifico; 0) Salir");
                 eleccion = input.nextInt();
 
                 switch (eleccion) {
@@ -57,10 +58,10 @@ public class Main {
                         dirrector = input.nextLine();
                         t.setDirector(dirrector);
 
-                        System.out.println("Duracion, HH-MM");
+                        System.out.println("Duracion, HH MM");
                         hora = input.nextInt();
                         minutos = input.nextInt();
-                        t.setDuracion(hora, minutos);
+                        ContenidoAudioVisual.setDuracion(hora, minutos);
                         
                         System.out.println("Fecha de Estreno AAAA-MM-DD");
                         fecEstAnio = input.nextInt();
@@ -93,8 +94,8 @@ public class Main {
                         t.setInterpretes(interpretes);
                         */
                         //fav.addContenido(t);
-                        cat.addContenido(p);
-                        //cat.agregarFaborito(p);
+                        //cat.addContenido(p);
+                        cat.addContenido(t);
                         break;
                     }
                     case 2 -> {
