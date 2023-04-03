@@ -8,10 +8,10 @@ public class Favoritos {
     public Favoritos(){
         vec = new Vector<>();
     }
-    public void agregarFaborito(ContenidoAudioVisual cont){
+    public void addContenido(ContenidoAudioVisual cont){
         vec.add(cont);
     }
-    public void eliminarFavorito(String info){
+    public void deleteContenido(String info){
         for(int i=0;i<vec.size();i++){
             if(info.matches(vec.get(i).getTitulo())){
                 vec.remove(i);
@@ -19,16 +19,9 @@ public class Favoritos {
             }
         }
     }
-    public void listarFavorito(){
+    public void showContenido(){
         for (ContenidoAudioVisual contenidoAudioVisual : vec) {
-            System.out.println(contenidoAudioVisual.getTitulo());
-            System.out.println(contenidoAudioVisual.getAutor());
-            System.out.println(contenidoAudioVisual.getDirector());
-            System.out.println(contenidoAudioVisual.getGenero());
-            System.out.println(contenidoAudioVisual.getSubtitulos());
-            System.out.println(contenidoAudioVisual.getFechaEstreno());
-            System.out.println(ContenidoAudioVisual.getDuracion());
-            System.out.println(contenidoAudioVisual.getIdiomaOriginal());
+            contenidoAudioVisual.toString();
         }
     }
 }
