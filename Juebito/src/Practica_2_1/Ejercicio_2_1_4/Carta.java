@@ -1,17 +1,26 @@
 package Practica_2_1.Ejercicio_2_1_4;
 
+import java.text.BreakIterator;
+
 public class Carta {
-    private String pica;
-    private String corazon;
-    private String diamante;
-    private String trebol;
-    private int min = 1, max = 4;
-    private int rango = max - min + 1;
+    private int pica;
+    private int corazon;
+    private int diamante;
+    private int trebol;
 
-
-public void generarCarta(){
-    int tipo = 0;
-    tipo = (int) (Math.random() * this.rango) + this.min;
-    System.out.println(tipo);
-}
+public Carta generarCarta(int i){
+    switch(i){
+        case 1: //PICA
+            this.pica++;
+            
+        break;
+        case 2: //CORAZON
+        break;
+        case 3: //DIAMANTE
+        break;
+        case 4: //TREBOL
+        break;
+        default;
+        }
+    }
 }
