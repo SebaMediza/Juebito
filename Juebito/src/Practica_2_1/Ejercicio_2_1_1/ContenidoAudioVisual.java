@@ -1,6 +1,6 @@
 package Practica_2_1.Ejercicio_2_1_1;
 import java.util.Calendar;
-//import java.util.Calendar;
+import java.util.Date;
 import java.util.GregorianCalendar;
 
 public class ContenidoAudioVisual {
@@ -45,11 +45,11 @@ public class ContenidoAudioVisual {
     }
 
     public static int getDuracion() {
-        return GregorianCalendar.HOUR + ':' + GregorianCalendar.MINUTE;
+        return calendar.HOUR + ':' + calendar.MINUTE;
     }
-    public void setDuracion(int horas, int minutos) {
-        //this.duracion.add(this.duracion.HOUR, minutos);
-        //this.duracion.add(this.duracion.MINUTE, minutos);
+    public static void setDuracion(int horas, int minutos) {
+        calendar.set(GregorianCalendar.HOUR, horas);
+        calendar.set(GregorianCalendar.MINUTE, minutos);
     }
     public String getDirector() {
         return director;
@@ -92,5 +92,21 @@ public class ContenidoAudioVisual {
     }
     public void setSubtitulos(String subtitulos) {
         this.subtitulos = subtitulos;
+    }
+
+    @Override
+    public String toString() {
+        return 
+            " Titulo='" + getTitulo() + "'" +
+            ", Autor='" + getAutor() + "'" +
+            ", Duracion='" + getDuracion() + "'" +
+            ", Director='" + getDirector() + "'" +
+            ", Interpretes='" + getInterpretes() + "'" +
+            ", Actores='" + getActores() + "'" +
+            ", Fecha de Estreno='" + getFechaEstreno() + "'" +
+            ", Genero='" + getGenero() + "'" +
+            ", Idioma Original='" + getIdiomaOriginal() + "'" +
+            ", Subtitulos='" + getSubtitulos() + "'"
+            ;
     }
 }
