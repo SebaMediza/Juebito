@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "Practica_2_2.Ejercicio_2_2_1.Main",
+            "projectName": "Juebito_3399cbb2"
+        },
+        {
+            "type": "java",
+            "name": "FigraAbierta",
+            "request": "launch",
+            "mainClass": "Practica_2_2.Ejercicio_2_2_1.FigraAbierta",
+            "projectName": "Juebito_3399cbb2"
+        },
+        {
+            "type": "java",
             "name": "Main_v2",
             "request": "launch",
             "mainClass": "Practica_2_1.Ejercicio_2_1_1.Main_v2",

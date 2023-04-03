@@ -1,10 +1,13 @@
 package Practica_2_2.Ejercicio_2_2_1;
 
 public class Figura {
-    protected String identificadorString;
+    //protected String identificadorString;
     
     public Figura(){
-        this.identificadorString = "Esto es una figura";
-        System.out.println(identificadorString);
+        System.out.println("Se creo un objeto de tipo Figura");
+    }
+
+    protected void imprimirIdentificador(String id){
+        System.out.println(id);
     }
 }
