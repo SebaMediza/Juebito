@@ -19,11 +19,11 @@ public class Main implements Multiplicable{
         // vec_2 = (MiVector) miArray.get(0);
         // vec_2.mostrarResultados();
     
-        MiMatriz mat = new MiMatriz();
-        MiMatriz mat_2 = new MiMatriz();
-        miArray.add(0, mat);
-        mat.multiplicar(10);
-        mat_2 = (MiMatriz) miArray.get(0);
-        mat_2.mostrarResultados();
+        // MiMatriz mat = new MiMatriz();
+        // MiMatriz mat_2 = new MiMatriz();
+        // miArray.add(0, mat);
+        // mat.multiplicar(10);
+        // mat_2 = (MiMatriz) miArray.get(0);
+        // mat_2.mostrarResultados();
     }
 }
