@@ -9,7 +9,9 @@ public class MiVector implements Multiplicable {
         }
     }
 
-    public int[] mostrarResultados(){
-        return this.valor;
+    public void mostrarResultados(){
+        for(int i=0;i<this.valor.length;i++){
+            System.out.println(this.valor[i]);
+        }
     }
 }
