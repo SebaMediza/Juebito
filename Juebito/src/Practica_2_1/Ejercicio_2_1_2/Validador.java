@@ -7,8 +7,11 @@ public class Validador {
     private String email;
     private String letras;
 
-    public boolean esAlfanumerico(String alfaumerico) {
-        this.alfanumerico = alfaumerico;
+    public Validador() {
+    }
+
+    public boolean esAlfanumerico(String alfanumerico) {
+        this.alfanumerico = alfanumerico;
         String patron = "^[\\w]*$";
         Pattern p = Pattern.compile(patron);
         Boolean b = p.matcher(this.alfanumerico).lookingAt();
