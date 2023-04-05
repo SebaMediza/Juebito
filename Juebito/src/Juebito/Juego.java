@@ -1,12 +1,11 @@
 package Juebito;
 
 public abstract class Juego {
-    private String reusltado;
-    public abstract void jugar();
-
-
+    private String resultado;
     
-
-
-
+    public abstract void jugar();
+    
+    public String mostrarResultado() {
+        return this.resultado;
+    }
 }
