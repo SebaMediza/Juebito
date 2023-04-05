@@ -16,7 +16,8 @@ public class Mazo {
 
     switch(tipo){
         case 1: //PICA
-            
+            Carta carta = new Carta();
+            macito.add(carta);
         break;
         case 2: //CORAZON
         break;
@@ -26,8 +27,6 @@ public class Mazo {
         break;
         default:
         System.out.println("Error");
-            
-
-    }
+        }
     }
 }
