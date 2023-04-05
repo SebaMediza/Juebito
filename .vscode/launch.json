@@ -8,6 +8,13 @@
             "type": "java",
             "name": "Main",
             "request": "launch",
+            "mainClass": "Juebito.Main",
+            "projectName": "Juebito_3399cbb2"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
             "mainClass": "Practica_2_2.Ejercicio_2_2_2.Main",
             "projectName": "Juebito_3399cbb2"
         },

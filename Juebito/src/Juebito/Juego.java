@@ -1,7 +1,7 @@
 package Juebito;
 
 public abstract class Juego {
-    private String resultado;
+    protected String resultado;
     
     public abstract void jugar();
     
