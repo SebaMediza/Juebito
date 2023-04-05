@@ -24,7 +24,8 @@ public class Mazo {
         break;
         case 4: //TREBOL
         break;
-        default;
+        default:
+        System.out.println("Error");
             
 
     }

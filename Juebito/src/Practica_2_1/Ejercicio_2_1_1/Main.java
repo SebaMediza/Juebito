@@ -45,7 +45,7 @@ public class Main {
                             10,
                             2001
                         );
-                        /*
+                        
                         System.out.println("Titulo");
                         titutlo = input.nextLine();
                         t.setTitulo(titutlo);
@@ -92,9 +92,9 @@ public class Main {
                         System.out.println("Ingrese los Interpretes, separados por una ,");
                         interpretes = input.nextLine();
                         t.setInterpretes(interpretes);
-                        */
+                        
                         //fav.addContenido(t);
-                        //cat.addContenido(p);
+                        cat.addContenido(p);
                         cat.addContenido(t);
                         break;
                     }
