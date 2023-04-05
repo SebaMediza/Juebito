@@ -9,6 +9,13 @@
             "name": "Main",
             "request": "launch",
             "mainClass": "Juebito.Main",
+            "projectName": "Juebito_6e9184e9"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "Juebito.Main",
             "projectName": "Juebito_3399cbb2"
         },
         {
