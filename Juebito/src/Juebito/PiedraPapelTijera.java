@@ -1,40 +1,25 @@
 package Juebito;
 
+import java.util.Random;
+
 public class PiedraPapelTijera extends Juego{
-    private String pierda = "piedra";
+    private String piedra = "piedra";
     private String papel = "papel";
     private String tijera = "tijera";
     
+    @Override
+    public void jugar() {
+    
+        Random random = new Random();
+        int num = random.nextInt(3);
+        if (num == 0) {
+            this.resultado = piedra;
+        } else if (num == 1) {
+            this.resultado = papel;
+        } else {
+            this.resultado = tijera;
+        }
 
-
-    public String getPierda() {
-        return this.pierda;
-    }
-
-    public void setPierda(String pierda) {
-        this.pierda = pierda;
-    }
-
-    public String getPapel() {
-        return this.papel;
-    }
-
-    public void setPapel(String papel) {
-        this.papel = papel;
-    }
-
-    public String getTijera() {
-        return this.tijera;
-    }
-
-    public void setTijera(String tijera) {
-        this.tijera = tijera;
-    }
-
-
-    public void jugar(){
-
-        
     }
     
 }
