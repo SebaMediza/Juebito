@@ -25,13 +25,13 @@ public class Main {
                   indice = 0;
                   games.get(indice).jugar();
                   System.out.println("El resultado es: ");
-                  System.out.println(games.get(0).mostrarResultado());
+                  System.out.println(games.get(indice).mostrarResultado());
                break;
                case 2:
                   indice = 1;
                   games.get(indice).jugar();
                   System.out.println("El resultado es: ");
-                  System.out.println(games.get(0).mostrarResultado());
+                  System.out.println(games.get(indice).mostrarResultado());
                break;
             }
          }while(eleccion != 0);
