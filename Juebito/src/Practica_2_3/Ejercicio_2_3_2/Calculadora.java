@@ -8,7 +8,7 @@ public class Calculadora extends JFrame implements ActionListener {
     static JButton b0, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, b18;
     static JTextField result;
 
-    public static void showGUI() {
+    public void showGUI() {
         b0 = new JButton("0");
         b1 = new JButton("1");
         b2 = new JButton("2");
@@ -29,6 +29,7 @@ public class Calculadora extends JFrame implements ActionListener {
         b17 = new JButton("=");
         b18 = new JButton("<-");
         result = new JTextField();
+        b0.addActionListener(this);
 
         JFrame f = new JFrame("Calculadora");
         GridBagConstraints c = new GridBagConstraints();
@@ -131,9 +132,11 @@ public class Calculadora extends JFrame implements ActionListener {
     }
 
     public static void main(String[] args) {
-        showGUI();
+        Calculadora cal = new Calculadora();
+        cal.showGUI();
     }
 
     public void actionPerformed(ActionEvent evt) {
+
     }
 }
