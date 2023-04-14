@@ -6,9 +6,9 @@ import javax.swing.*;
 public class Calculadora extends JFrame implements ActionListener {
 
     static JButton b0, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, b18;
-    static JTextField result;
+    static JTextArea result;
 
-    public void showGUI() {
+    public void showGUI(){
         b0 = new JButton("0");
         b1 = new JButton("1");
         b2 = new JButton("2");
@@ -28,13 +28,11 @@ public class Calculadora extends JFrame implements ActionListener {
         b16 = new JButton("C");
         b17 = new JButton("=");
         b18 = new JButton("<-");
-        result = new JTextField();
-        b0.addActionListener(this);
+        result = new JTextArea();
 
         JFrame f = new JFrame("Calculadora");
         GridBagConstraints c = new GridBagConstraints();
         f.setLayout(new GridBagLayout());
-        //f.setSize(500,500);
         c.fill = GridBagConstraints.BOTH;
         c.insets = new Insets(3,3,3,3);
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -129,14 +127,48 @@ public class Calculadora extends JFrame implements ActionListener {
         f.add(b13,c);
         f.pack();
         f.setVisible(true);
+        this.action();
     }
-
+    private void action(){
+        b0.addActionListener(this);
+        b1.addActionListener(this);
+        b2.addActionListener(this);
+        b3.addActionListener(this);
+        b4.addActionListener(this);
+        b5.addActionListener(this);
+        b6.addActionListener(this);
+        b7.addActionListener(this);
+        b8.addActionListener(this);
+        b9.addActionListener(this);
+        b10.addActionListener(this);
+        b11.addActionListener(this);
+        b12.addActionListener(this);
+        b13.addActionListener(this);
+        b14.addActionListener(this);
+        b15.addActionListener(this);
+        b16.addActionListener(this);
+        b17.addActionListener(this);
+        b18.addActionListener(this);
+    }
     public static void main(String[] args) {
         Calculadora cal = new Calculadora();
         cal.showGUI();
     }
 
     public void actionPerformed(ActionEvent evt) {
+        if(evt.getActionCommand().equals(b0.getActionCommand())){
+            result.append(b0.getText());
+        }
+        if(evt.getActionCommand().equals(b1.getActionCommand())){
+            result.append(b1.getText());
+        }
+        if(evt.getActionCommand().equals(b13.getActionCommand())){
+            result.append(b13.getText());
+        }
+        if(evt.getActionCommand().equals(b17.getActionCommand())){
+
+        }
+
 
     }
 }
