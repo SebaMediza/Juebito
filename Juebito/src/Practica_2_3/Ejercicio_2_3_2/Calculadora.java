@@ -169,10 +169,10 @@ public class Calculadora extends JFrame implements ActionListener {
             System.out.println("igual");
             result.setText("");
             switch (operacion) {
-                case "+" -> result.append(String.valueOf(num1 + num2));
-                case "-" -> result.append(String.valueOf(num1 - num2));
-                case "*" -> result.append(String.valueOf(num1 * num2));
-                case "/" -> result.append(String.valueOf(num1 / num2));
+                case "+" : result.append(String.valueOf(num1 + num2));
+                case "-" : result.append(String.valueOf(num1 - num2));
+                case "*" : result.append(String.valueOf(num1 * num2));
+                case "/" : result.append(String.valueOf(num1 / num2));
 
             }
         }
