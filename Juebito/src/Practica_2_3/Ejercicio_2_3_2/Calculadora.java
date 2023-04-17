@@ -1,10 +1,14 @@
 package Practica_2_3.Ejercicio_2_3_2;
 import java.awt.event.*;
 import java.awt.*;
+import java.util.Arrays;
 import javax.swing.*;
+import java.util.regex.Pattern;
+
 
 public class Calculadora extends JFrame implements ActionListener {
-
+    int num1 = -1, num2 = -1;
+    String operacion;
     static JButton b0, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, b18;
     static JTextArea result;
 
@@ -129,46 +133,59 @@ public class Calculadora extends JFrame implements ActionListener {
         f.setVisible(true);
         this.action();
     }
+
     private void action(){
-        b0.addActionListener(this);
-        b1.addActionListener(this);
-        b2.addActionListener(this);
-        b3.addActionListener(this);
-        b4.addActionListener(this);
-        b5.addActionListener(this);
-        b6.addActionListener(this);
-        b7.addActionListener(this);
-        b8.addActionListener(this);
-        b9.addActionListener(this);
-        b10.addActionListener(this);
-        b11.addActionListener(this);
-        b12.addActionListener(this);
-        b13.addActionListener(this);
-        b14.addActionListener(this);
-        b15.addActionListener(this);
-        b16.addActionListener(this);
-        b17.addActionListener(this);
-        b18.addActionListener(this);
+        for (JButton jButton : Arrays.asList(b0, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, b18)) {
+            jButton.addActionListener(this);
+        }
     }
+
     public static void main(String[] args) {
         Calculadora cal = new Calculadora();
         cal.showGUI();
     }
 
     public void actionPerformed(ActionEvent evt) {
-        if(evt.getActionCommand().equals(b0.getActionCommand())){
-            result.append(b0.getText());
+        for (JButton jButton : Arrays.asList(b0, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14)) {
+            if (evt.getActionCommand().equals(jButton.getActionCommand())) {
+                result.append(jButton.getText());
+                boolean b = this.esNumero(jButton);
+                if (num1 == -1 && b) {
+                    num1 = Integer.parseInt(jButton.getText());
+                    System.out.println("num1 guardado");
+                }
+                if (evt.getActionCommand().equals(b10.getActionCommand()) || evt.getActionCommand().equals(b11.getActionCommand()) || evt.getActionCommand().equals(b12.getActionCommand()) || b13.getActionCommand().equals(evt.getActionCommand())) {
+                    operacion = jButton.getText();
+                    System.out.println(operacion);
+                }
+                b = this.esNumero(jButton);
+                if (num2 == -1 && b && num1 != Integer.parseInt(jButton.getText())) {
+                    num2 = Integer.parseInt(jButton.getText());
+                    System.out.println("num2 guardado");
+                }
+            }
         }
-        if(evt.getActionCommand().equals(b1.getActionCommand())){
-            result.append(b1.getText());
-        }
-        if(evt.getActionCommand().equals(b13.getActionCommand())){
-            result.append(b13.getText());
-        }
-        if(evt.getActionCommand().equals(b17.getActionCommand())){
+        if (evt.getActionCommand().equals(b17.getActionCommand())) {
+            System.out.println("igual");
+            result.setText("");
+            switch (operacion) {
+                case "+" -> result.append(String.valueOf(num1 + num2));
+                case "-" -> result.append(String.valueOf(num1 - num2));
+                case "*" -> result.append(String.valueOf(num1 * num2));
+                case "/" -> result.append(String.valueOf(num1 / num2));
 
+            }
         }
+        if (evt.getActionCommand().equals(b15.getActionCommand())) {
+            result.setText("");
+            num1 = -1;
+            num2 = -1;
+        }
+    }
 
-
+    private boolean esNumero(JButton jButton){
+        String patron = "^\\d*$";
+        Pattern p = Pattern.compile(patron);
+        return p.matcher(jButton.getText()).lookingAt();
     }
 }
