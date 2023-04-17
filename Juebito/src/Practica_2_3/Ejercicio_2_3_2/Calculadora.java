@@ -146,16 +146,14 @@ public class Calculadora extends JFrame implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent evt) {
-        for (JButton jButton : Arrays.asList(b0, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b17)) {
+        for (JButton jButton : Arrays.asList(b0, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b17, b18)) {
             if (evt.getActionCommand().equals(jButton.getActionCommand())) {
                 if (esNumero(jButton)) {
                     result.append(jButton.getText());
                 }
                 if (!esNumero(jButton) && num1 == -1) {
                     num1 = Integer.parseInt(result.getText());
-                    System.out.println("num1 guardado");
                     System.out.println(num1);
-//                    System.out.println(num2);
                 }
                 if (evt.getActionCommand().equals(b10.getActionCommand()) || evt.getActionCommand().equals(b11.getActionCommand()) || evt.getActionCommand().equals(b12.getActionCommand()) || b13.getActionCommand().equals(evt.getActionCommand())) {
                     result.setText(null);
@@ -164,14 +162,12 @@ public class Calculadora extends JFrame implements ActionListener {
                 }
                 if (!esNumero(jButton) && !result.getText().isEmpty()) {
                     num2 = Integer.parseInt(result.getText());
-                    System.out.println("num2 guardado");
                     System.out.println(num2);
                 }
-//                b = this.esNumero(jButton);
-//                if (num2 == -1 && b && num1 != Integer.parseInt(jButton.getText())) {
-//                    num2 = Integer.parseInt(jButton.getText());
-//                    System.out.println("num2 guardado");
-//                }
+                int caretPosition = result.getCaretPosition();
+                if (caretPosition > 0 && evt.getActionCommand().equals(b18.getActionCommand())) { // Make sure there is text to delete
+                    result.replaceRange("", caretPosition - 1, caretPosition);
+                }
             }
         }
         if (evt.getActionCommand().equals(b17.getActionCommand())) {
