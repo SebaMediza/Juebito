@@ -1,14 +1,18 @@
 package Practica_2_3.Ejercicio_2_3_2;
 import java.awt.event.*;
 import java.awt.*;
+import java.util.Arrays;
 import javax.swing.*;
+import java.util.regex.Pattern;
 
-public class Calculadora extends Panel implements ActionListener {
 
-    JButton b0, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, b18;
-    JTextField result;
+public class Calculadora extends JFrame implements ActionListener {
+    int num1 = -1, num2 = -1;
+    String operacion;
+    static JButton b0, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, b18;
+    static JTextArea result;
 
-    public Calculadora() {
+    public void showGUI(){
         b0 = new JButton("0");
         b1 = new JButton("1");
         b2 = new JButton("2");
@@ -28,61 +32,160 @@ public class Calculadora extends Panel implements ActionListener {
         b16 = new JButton("C");
         b17 = new JButton("=");
         b18 = new JButton("<-");
+        result = new JTextArea();
 
-        result = new JTextField();
-
-        this.add(b0);
-        this.add(b1);
-        this.add(b2);
-        this.add(b3);
-        this.add(b4);
-        this.add(b5);
-        this.add(b6);
-        this.add(b7);
-        this.add(b8);
-        this.add(b9);
-        this.add(b10);
-        this.add(b11);
-        this.add(b12);
-        this.add(b13);
-        this.add(b14);
-        this.add(b15);
-        this.add(b16);
-        this.add(b17);
-        this.add(b18);
-        this.add(result);
-
-
-    }
-
-    public void mostrar(){
-        Frame f = new Frame("Botones Nuevo");
+        JFrame f = new JFrame("Calculadora");
         GridBagConstraints c = new GridBagConstraints();
-        setFont(new Font("SansSerif", Font.PLAIN, 14));
         f.setLayout(new GridBagLayout());
-
-        WindowListener l = new WindowAdapter() {
-            public void windowClosing(WindowEvent e) {
-                System.exit(0);
-            }
-        };
-        f.addWindowListener(l);
         c.fill = GridBagConstraints.BOTH;
-        c.weightx = 3.0;
-        f.add(this.result, c);
-        c.gridwidth = GridBagConstraints.REMAINDER; //end row
-        f.add(this.b18, c);
+        c.insets = new Insets(3,3,3,3);
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //PRIMERA FILA
+        c.weightx = 0.5;
+        c.gridwidth = 4;
+        c.gridx = 0;
+        c.gridy = 1;
+        f.add (result,c);
+        c.gridwidth = 1;
+        c.weightx = 0.5;
+        c.gridx = 4;
+        c.gridy = 1;
+        f.add (b18,c);
+        c.weightx = 0.5;
+        c.gridx = 0;
+        c.gridy = 2;
+        f.add(b7,c);
+        c.weightx = 0.5;
+        c.gridx = 1;
+        c.gridy = 2;
+        f.add(b8,c);
+        c.weightx = 0.5;
+        c.gridx = 2;
+        c.gridy = 2;
+        f.add(b9,c);
+        c.weightx = 0.5;
+        c.gridx = 3;
+        c.gridy = 2;
+        f.add(b10,c);
+        c.weightx = 0.5;
+        c.gridx = 4;
+        c.gridy = 2;
+        f.add(b15,c);
+        //SEGUNDA FILA
+        c.weightx = 0.5;
+        c.gridx = 0;
+        c.gridy = 3;
+        f.add(b4,c);
+        c.weightx = 0.5;
+        c.gridx = 1;
+        c.gridy = 3;
+        f.add(b5,c);
+        c.weightx = 0.5;
+        c.gridx = 2;
+        c.gridy = 3;
+        f.add(b6,c);
+        c.weightx = 0.5;
+        c.gridx = 3;
+        c.gridy = 3;
+        f.add(b11,c);
+        c.weightx = 0.5;
+        c.gridx = 4;
+        c.gridy = 3;
+        f.add(b16,c);
+        //TERCERA FILA
+        c.weightx = 0.5;
+        c.gridx = 0;
+        c.gridy = 4;
+        f.add(b1,c);
+        c.weightx = 0.5;
+        c.gridx = 1;
+        c.gridy = 4;
+        f.add(b2,c);
+        c.weightx = 0.5;
+        c.gridx = 2;
+        c.gridy = 4;
+        f.add(b3,c);
+        c.weightx = 0.5;
+        c.gridx = 3;
+        c.gridy = 4;
+        f.add(b12,c);
+        c.gridheight = 2;
+        c.weightx = 0.5;
+        c.gridx = 4;
+        c.gridy = 4;
+        f.add(b17,c);
+        //ULTIMA FILA
+        c.weightx = 0.5;
+        c.gridwidth = 2;
+        c.gridx = 0;
+        c.gridy = 5;
+        f.add(b0,c);
+        c.gridwidth = 1;
+        c.weightx = 0.5;
+        c.gridx = 2;
+        c.gridy = 5;
+        f.add(b14,c);
+        c.weightx = 0.5;
+        c.gridx = 3;
+        c.gridy = 5;
+        f.add(b13,c);
         f.pack();
         f.setVisible(true);
+        this.action();
     }
 
+    private void action(){
+        for (JButton jButton : Arrays.asList(b0, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, b18)) {
+            jButton.addActionListener(this);
+        }
+    }
 
     public static void main(String[] args) {
         Calculadora cal = new Calculadora();
-        cal.mostrar();
-
+        cal.showGUI();
     }
 
     public void actionPerformed(ActionEvent evt) {
+        for (JButton jButton : Arrays.asList(b0, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14)) {
+            if (evt.getActionCommand().equals(jButton.getActionCommand())) {
+                result.append(jButton.getText());
+                boolean b = this.esNumero(jButton);
+                if (num1 == -1 && b) {
+                    num1 = Integer.parseInt(jButton.getText());
+                    System.out.println("num1 guardado");
+                }
+                if (evt.getActionCommand().equals(b10.getActionCommand()) || evt.getActionCommand().equals(b11.getActionCommand()) || evt.getActionCommand().equals(b12.getActionCommand()) || b13.getActionCommand().equals(evt.getActionCommand())) {
+                    operacion = jButton.getText();
+                    System.out.println(operacion);
+                }
+                b = this.esNumero(jButton);
+                if (num2 == -1 && b && num1 != Integer.parseInt(jButton.getText())) {
+                    num2 = Integer.parseInt(jButton.getText());
+                    System.out.println("num2 guardado");
+                }
+            }
+        }
+        if (evt.getActionCommand().equals(b17.getActionCommand())) {
+            System.out.println("igual");
+            result.setText("");
+            switch (operacion) {
+                case "+" -> result.append(String.valueOf(num1 + num2));
+                case "-" -> result.append(String.valueOf(num1 - num2));
+                case "*" -> result.append(String.valueOf(num1 * num2));
+                case "/" -> result.append(String.valueOf(num1 / num2));
+
+            }
+        }
+        if (evt.getActionCommand().equals(b15.getActionCommand())) {
+            result.setText("");
+            num1 = -1;
+            num2 = -1;
+        }
+    }
+
+    private boolean esNumero(JButton jButton){
+        String patron = "^\\d*$";
+        Pattern p = Pattern.compile(patron);
+        return p.matcher(jButton.getText()).lookingAt();
     }
 }
