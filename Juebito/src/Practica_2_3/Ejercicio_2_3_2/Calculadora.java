@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 
 
 public class Calculadora extends JFrame implements ActionListener {
-    int num1 = -1, num2 = -1;
+    int num1=-1, num2=-1;
     String operacion;
     static JButton b0, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, b18;
     static JTextArea result;
@@ -146,22 +146,27 @@ public class Calculadora extends JFrame implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent evt) {
-        for (JButton jButton : Arrays.asList(b0, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14)) {
+        for (JButton jButton : Arrays.asList(b0, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b17, b18)) {
             if (evt.getActionCommand().equals(jButton.getActionCommand())) {
-                result.append(jButton.getText());
-                boolean b = this.esNumero(jButton);
-                if (num1 == -1 && b) {
-                    num1 = Integer.parseInt(jButton.getText());
-                    System.out.println("num1 guardado");
+                if (esNumero(jButton)) {
+                    result.append(jButton.getText());
+                }
+                if (!esNumero(jButton) && num1 == -1) {
+                    num1 = Integer.parseInt(result.getText());
+                    System.out.println(num1);
                 }
                 if (evt.getActionCommand().equals(b10.getActionCommand()) || evt.getActionCommand().equals(b11.getActionCommand()) || evt.getActionCommand().equals(b12.getActionCommand()) || b13.getActionCommand().equals(evt.getActionCommand())) {
+                    result.setText(null);
                     operacion = jButton.getText();
                     System.out.println(operacion);
                 }
-                b = this.esNumero(jButton);
-                if (num2 == -1 && b && num1 != Integer.parseInt(jButton.getText())) {
-                    num2 = Integer.parseInt(jButton.getText());
-                    System.out.println("num2 guardado");
+                if (!esNumero(jButton) && !result.getText().isEmpty()) {
+                    num2 = Integer.parseInt(result.getText());
+                    System.out.println(num2);
+                }
+                int caretPosition = result.getCaretPosition();
+                if (caretPosition > 0 && evt.getActionCommand().equals(b18.getActionCommand())) { // Make sure there is text to delete
+                    result.replaceRange("", caretPosition - 1, caretPosition);
                 }
             }
         }
