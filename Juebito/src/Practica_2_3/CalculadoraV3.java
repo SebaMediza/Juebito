@@ -16,11 +16,11 @@ public class CalculadoraV3 extends JFrame{
     private JPanel pnlBotones = new JPanel(new GridLayout(4,4));
     private JPanel pnlIgual = new JPanel(new GridLayout(1,1));
     private JButton[] botones = {
-        new JButton("1"),  new JButton("2"), new JButton("3"), new JButton("+"),
-        new JButton("4"),  new JButton("5"), new JButton("6"), new JButton("-"),  
-        new JButton("7"),  new JButton("8"), new JButton("9"), new JButton("*"),
-        new JButton("C"),  new JButton("0"), new JButton(","), new JButton("/"),
-        new JButton("=")
+        new JButton("7"),  new JButton("8"), new JButton("9"), new JButton("/"), new JButton("CE"),
+        new JButton("4"),  new JButton("5"), new JButton("6"), new JButton("*"), new JButton("C"),
+        new JButton("1"),  new JButton("2"), new JButton("3"), new JButton("-"),
+        new JButton("0"), new JButton(","), new JButton("+"), new JButton("=")
+     
     };
     private Dimension dmVentana = new Dimension(300,440);
     
@@ -46,7 +46,7 @@ public class CalculadoraV3 extends JFrame{
         
         lblResultado.setBackground(Color.white);
         lblResultado.setOpaque(true);
-        lblResultado.setFont(new Font("Arial", Font.PLAIN,32));
+        lblResultado.setFont(new Font("Arial", Font.PLAIN,50));
         PulsaRaton pr = new PulsaRaton();
         for (int i=0; i<botones.length-1;i++){
             pnlBotones.add(botones[i]);
@@ -64,7 +64,7 @@ public class CalculadoraV3 extends JFrame{
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
         
-        lblResultado.setText("0,0");
+        lblResultado.setText("0");
         lblResultado.setHorizontalAlignment(JLabel.RIGHT);
         
         
